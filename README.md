@@ -1,6 +1,7 @@
 # Pràctica: tutorial d'Ionic
 ## Repositori
 [Repositori Github](https://github.com/S-Cesc/photo-gallery)
+[AppFlow](https://dashboard.ionicframework.com/app/ac6b78b2/build/builds)
 
 ## Included
 
