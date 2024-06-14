@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonIcon } from "@ionic/angular/standalone";
 import { Subscription } from 'rxjs';
-import { MessageService } from '../../services/message.service';
+import { MessageHubService } from '../../services/messageHub.service';
 import { IErrorMessage } from '../../interfaces/IMessage';
 
 @Component({
@@ -18,7 +18,7 @@ export class HeaderComponent implements OnDestroy {
   
   private subscription: Subscription;
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageHubService) {
       // subscribe to home component messages
       this.subscription = this.messageService.onMessage().subscribe(message => {
         if (message.tag == "error") {

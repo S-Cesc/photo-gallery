@@ -3,7 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { IMessage } from '../interfaces/IMessage';
 
 @Injectable({ providedIn: 'root' })
-export class MessageService {
+export class MessageHubService {
     private subject = new Subject<IMessage<any>>();
 
     sendMessage(message: IMessage<any>) {

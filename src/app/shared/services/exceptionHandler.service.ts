@@ -8,7 +8,7 @@
 
 import { ErrorHandler, Injectable, NgZone } from '@angular/core';
 import { toErrorWithMessage } from '../util/errors';
-import { MessageService } from './message.service';
+import { MessageHubService } from './messageHub.service';
 import { IErrorDismissedMessage, IErrorMessage } from '../interfaces/IMessage';
 import { ToastController } from '@ionic/angular';
 
@@ -20,7 +20,7 @@ export class ErrorService implements ErrorHandler {
 
     constructor(
         private toastController: ToastController,
-        private messageService: MessageService,
+        private messageService: MessageHubService,
         private zone: NgZone) { }
 
 
