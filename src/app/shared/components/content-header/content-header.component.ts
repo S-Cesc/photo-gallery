@@ -14,19 +14,22 @@ import { IErrorMessage } from '../../interfaces/IMessage';
 export class ContentHeaderComponent  implements OnDestroy {
 
   @Input({ required: true }) title!: string;
-
-  noError = false;
+  
+  public get hasError() { return this.errorDetected; }
+  private set hasError(value: boolean) { this.errorDetected = value; }
 
   private subscription: Subscription;
+  private errorDetected: boolean;
 
   constructor(private messageService: MessageHubService) { 
+      this.errorDetected = false;
       // subscribe to home component messages
       this.subscription = this.messageService.onMessage().subscribe(message => {
       if (message.tag == "error") {
         const errMessage = message as IErrorMessage;
-        this.noError = true;
+        this.hasError = true;
       } else if (message.tag == "dismissError") {
-        this.noError = false;
+        this.hasError = false;
       }
     });
   }

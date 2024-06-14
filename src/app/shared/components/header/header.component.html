@@ -1,7 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      <ion-icon name="warning" [hidden]="noError"></ion-icon>
+      @if (hasError) {
+        <ion-icon name="warning"></ion-icon>
+      }
       {{ title }}
     </ion-title>
   </ion-toolbar>
