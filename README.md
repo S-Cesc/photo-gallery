@@ -4,9 +4,9 @@
 
 ## Included
 
-- Platform dependency centralized in a specific PhotoFilesystem to use user photos regardless of platform 
-- Standalone header
+- Platform dependency centralized for user photos in the specific class PhotoFilesystem, to use user photos regardless of platform 
+- Standalone header with an icon for error notification
 - IMessage and **messageHub.service**
-- Global **exception handler** using a ToastController for user comunication
+- Global **exception handler** using a ToastController to allow dynamic screen toast creation for user error notification
 - ErrorWithMessage for Error generalization (standaritzation for anomalous thrown of errors)
 
