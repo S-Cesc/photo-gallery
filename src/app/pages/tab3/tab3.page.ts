@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
+  readonly title = "Tab 3";
+
   constructor() {}
 
 }

@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
-import { PhotoService } from '../services/photo.service';
-import { IUserPhoto } from '../interfaces/iuser.photo';
+import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
+
+import { PhotoService } from '../../shared/services/photo.service';
+import { IUserPhoto } from '../../shared/interfaces/iuser.photo';
+
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  styleUrls: ['tab2.page.scss'],
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit {
+
+  readonly title = "Photo Gallery";
 
   constructor(public photoService: PhotoService,
               public actionSheetController: ActionSheetController) { }
