@@ -1,14 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, IonicModule } from '@ionic/angular';
 
 import { PhotoService } from '../../shared/services/photo.service';
 import { IUserPhoto } from '../../shared/interfaces/iuser.photo';
+import { ContentHeaderComponent } from '../../shared/components/content-header/content-header.component';
+import { HeaderComponent } from '../../shared/components/header/header.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss'],
+    selector: 'app-tab2',
+    templateUrl: 'tab2.page.html',
+    styleUrls: ['tab2.page.scss'],
+    standalone: true,
+    imports: [
+        HeaderComponent,
+        IonicModule,
+        ContentHeaderComponent, CommonModule, 
+    ],
 })
 export class Tab2Page implements OnInit {
 

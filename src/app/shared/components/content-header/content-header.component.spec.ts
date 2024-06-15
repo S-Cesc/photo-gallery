@@ -9,9 +9,8 @@ describe('ContentHeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentHeaderComponent ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
+    imports: [IonicModule.forRoot(), ContentHeaderComponent]
+}).compileComponents();
 
     fixture = TestBed.createComponent(ContentHeaderComponent);
     component = fixture.componentInstance;
