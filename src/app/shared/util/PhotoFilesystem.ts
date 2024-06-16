@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Platform } from '@ionic/angular';
 import { Capacitor } from '@capacitor/core';
 import { Directory, Filesystem, WriteFileResult } from '@capacitor/filesystem';
 import { Photo } from '@capacitor/camera';
 import { IUserPhoto } from '../interfaces/iuser.photo';
+import { Platform } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PhotoFilesystem {
-  private platform: Platform;
 
-  // the class must be a Singleton
-  constructor(platform: Platform) {
-    this.platform = platform;
+  constructor(private platform: Platform) {
   }
 
   private async readAsBase64(photo: Photo) {
@@ -61,7 +58,7 @@ export class PhotoFilesystem {
 
   public async platformDependentPhotos(photos: IUserPhoto[]) {
     // Easiest way to detect when running on the web:
-    // “when the platform is NOT hybrid, do this”
+    // “when the platform is NOT hybrid, do this”    
     if (!this.platform.is('hybrid')) {
       // Display the photo by reading into base64 format
       for (let photo of photos) {
@@ -75,6 +72,14 @@ export class PhotoFilesystem {
         photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
       }
     }
+  }
+
+  public async deleteFile(filename: string) {
+    // same anyway; it is not aware of platform
+    await Filesystem.deleteFile({
+      path: filename,
+      directory: Directory.Data
+    });
   }
 
 }
