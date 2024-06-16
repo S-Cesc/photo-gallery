@@ -12,7 +12,7 @@
 - Global **exception handler** using a ToastController to allow dynamic screen toast creation for user error notification
 - ErrorWithMessage for Error generalization (standaritzation for anomalous thrown of errors)
 
-## Recordatori d'Angular i Ionic
+## Recordatori d'Angular i Ionic: desplegament (*deploy*) i publicació
 
 - Desenvolupament amb els components de: `Ionic Framework UI components` (estil compatible amb mòbil)
 - S'instal·la Ionic i Android Studio.
@@ -42,7 +42,7 @@
 - **11.** Crear els projectes iOS i Android:
   - `ionic cap add ios`
   - `ionic cap add android`
-  - **IMPORTANT**: Cada vegada que es fa un *build* s'ha de copiar la informació als projectes iOS i Android:
+  - **IMPORTANT**: Cada vegada que es construeix (*es fa un build*) s'ha de copiar la informació als projectes iOS i Android:
     - `ionic cap copy`
   - **IMPORTANT**: Si es fan canvis en aquests projectes s'ha de sincronitzar el projecte amb els canvis:
     - `ionic cap sync`
